@@ -1,13 +1,14 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+import robotsTxt from "astro-robots-txt";
+
 // https://astro.build/config
 export default defineConfig({
   sitemap: {
     hostname: "https://blog.com",
-    exclude: ["/secret"],
+    exclude: ["/secret"]
   },
-  integrations: [sitemap()],
-  site: 'https://blog.com',
-  
+  integrations: [sitemap(), robotsTxt()],
+  site: 'https://blog.com'
 });
